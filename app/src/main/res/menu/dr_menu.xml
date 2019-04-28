@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:background="#234642">
+
+
+    <item
+        android:id="@+id/Search"
+        android:icon="@drawable/search"
+        android:title="جستجو" />
+
+    <!--<item-->
+        <!--android:id="@+id/PDFs"-->
+        <!--android:icon="@drawable/ebook"-->
+        <!--android:title="کتاب های الکترونیک" />-->
+    <item
+        android:id="@+id/AddXLS"
+        android:icon="@drawable/add"
+        android:title="اضافه کردن" />
+
+    <item
+        android:id="@+id/Setting"
+        android:icon="@drawable/settings"
+        android:title="تنظیمات" />
+
+    <item
+        android:id="@+id/Favorit"
+        android:icon="@drawable/bookmark"
+        android:title="علاقه مندی ها" />
+
+    <item
+        android:id="@+id/AboutUs"
+        android:icon="@drawable/about_us"
+        android:title="درباره ی ما" />
+    <item
+        android:id="@+id/ConnectUS"
+        android:icon="@drawable/contact"
+        android:title="ارتباط با ما" />
+
+    <item
+        android:id="@+id/Exit"
+        android:icon="@drawable/logout"
+        android:title="خروج" />
+
+
+</menu>

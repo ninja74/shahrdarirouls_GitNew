@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/bg_main"
+    tools:context=".Activity_Setting">
+
+    <include layout="@layout/toolbar_sr" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="اندازه فونت" />
+
+
+    <SeekBar
+        android:id="@+id/seekBarFont"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="10"
+        android:progress="2" />
+
+    <TextView
+        android:id="@+id/txttestSize"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="متن تست" />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="تغییر فونت" />
+
+
+    <Spinner
+        android:id="@+id/spinnerFont"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/txttestFont"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="متن تست" />
+
+
+    <Button
+        android:id="@+id/btnsabt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="اعمال تغییرات" />
+
+
+</LinearLayout>

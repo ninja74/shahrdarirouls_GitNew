@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">قوانین شهرداری</string>
+
+
+    <string name="StringAboutUs"><![CDATA[
+<html  dir="rtl">
+<meta charset="utf-8">
+<p><big><font color="#009686"> ارتباط با ما </font></big>
+<br>
+<font color="#213942" >راه های ارتباطی با ما</font>
+</p>
+<p>
+
+<p><font color="#213942" >Gmail: </font><font color="#CA1AFF">Abedzadehalireza74@Gmail.com</font>
+<font color="#CAD59B">& MeysamSMH7@Gmail.com</font> </p>
+<p><font color="#213942" >Yahoo: </font><font color="#1aa3ff">Abedzadehalireza74@Yahoo.com</font>
+<font color="#2eb8b8">& MeysamSM@Yahoo.com</font> </p>
+
+<p><font color="#213942" >Telegram: </font><font color="#CA5F53">+98 918 494 3559</font>
+<font color="#D29BAD">& +98 938 697 7100</font> </p>
+
+</p>
+
+</html>
+]]></string>
+
+
+</resources>
