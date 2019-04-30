@@ -18,8 +18,12 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.HurlStack;
+import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.joanzapata.pdfview.PDFView;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.io.BufferedInputStream;
 import java.io.File;
@@ -31,12 +35,14 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 public class MainActivityTest extends AppCompatActivity {
 
 
-    Button btn,btnShow;
-    public static final int EXTERNAL_STORAGE_REQ_CODE = 10 ;
+    Button btn, btnShow;
+    public static final int EXTERNAL_STORAGE_REQ_CODE = 10;
     private static final String TAG = MainActivityTest.class.getSimpleName();
 
 
@@ -58,43 +64,8 @@ public class MainActivityTest extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 //                new DownloadFile().execute("http://meysamsm.gigfa.com/pdf/anotherrules/test2.pdf" ,"test.pdf");
-                new DownloadFile().execute("http://www.azmoonshahri.ir/meysam/test.pdf" ,"test.pdf");
+                new DownloadFile().execute("http://www.azmoonshahri.ir/meysam/test.pdf", "test.pdf");
 //                new DownloadFile().execute("http://dl2.pnueb.com/Status%20of%20educational%20resources/manabe-132210.pdf" ,"test.pdf");
-
-//                String mUrl= "http://www.azmoonshahri.ir/meysam/test.pdf";
-//                connect request = new connect(Request.Method.GET, mUrl,
-//                        new Response.Listener<byte[]>() {
-//                            @Override
-//                            public void onResponse(byte[] response) {
-//                                // TODO handle the response
-//                                try {
-//                                    if (response!=null) {
-//
-//                                        FileOutputStream outputStream;
-//                                        String name="test.pdf";
-//                                        outputStream = openFileOutput(name, Context.MODE_PRIVATE);
-//                                        outputStream.write(response);
-//                                        outputStream.close();
-//                                        Toast.makeText(MainActivityTest.this,
-//                                                MainActivityTest.this.getFilesDir()+"Download complete.", Toast.LENGTH_LONG).show();
-//                                    }
-//                                } catch (Exception e) {
-//                                    // TODO Auto-generated catch block
-//                                    Log.d("KEY_ERROR", "UNABLE TO DOWNLOAD FILE");
-//                                    e.printStackTrace();
-//                                }
-//                            }
-//                        } ,new Response.ErrorListener() {
-//
-//                    @Override
-//                    public void onErrorResponse(VolleyError error) {
-//                        // TODO handle the error
-//                        error.printStackTrace();
-//                    }
-//                }, null);
-//                RequestQueue mRequestQueue = Volley.newRequestQueue(getApplicationContext(), new HurlStack());
-//                mRequestQueue.add(request);
-
 
 
             }
@@ -107,28 +78,29 @@ public class MainActivityTest extends AppCompatActivity {
 
                 PDFView pdfview = (PDFView) findViewById(R.id.pdfview);
 
-                if (!Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageDirectory())){
-                    pdfview.fromFile(new File(Environment.getExternalStorageDirectory().getAbsolutePath() , "test.pdf")).defaultPage(0).showMinimap(true).enableSwipe(true).load();
-                }
+                pdfview.fromFile(new File(Environment.getExternalStorageDirectory().getPath(), "test.pdf")).defaultPage(0).showMinimap(true).enableSwipe(true).load();
 
-//                Toast.makeText(MainActivityTest.this, Environment.getExternalStorageDirectory()+"", Toast.LENGTH_SHORT).show();
-
-//                pdfview.fromAsset("1-1.pdf").defaultPage(0).showMinimap(true).enableSwipe(true).load();
-
-
-//                File pdfFile = new File(Environment.getExternalStorageDirectory() + "/testthreepdf/" + "test.pdf");  // -> filename = maven.pdf
-//                Uri path = Uri.fromFile(pdfFile);
-//                Intent pdfIntent = new Intent(Intent.ACTION_VIEW);
-//                pdfIntent.setDataAndType(path, "application/pdf");
-//                pdfIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-//
-//                try{
-//                    startActivity(pdfIntent);
-//                }catch(ActivityNotFoundException e){
-//                    Toast.makeText(MainActivityTest.this, "No Application available to view PDF", Toast.LENGTH_SHORT).show();
-//                }
             }
         });
+
+
+
+
+
+        String url = "http://amlakeyekta.ir/woo/android2/woo2/getVariations.php";
+
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new OkResListenerVariations(), new ErrListenerVariations()) {
+            @Override
+            public Map<String, String> getParams() {
+                Map<String, String> params = new HashMap<>();
+                params.put("id", "322");
+                return params;
+            }
+        };
+
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        requestQueue.add(stringRequest);
+
 
 
 
@@ -136,27 +108,19 @@ public class MainActivityTest extends AppCompatActivity {
 
 
 
-//    private class DownloadFile extends AsyncTask<String, Void, Void> {
-//
-//        @Override
-//        protected Void doInBackground(String... strings) {
-//            String fileUrl = strings[0];   // -> http://maven.apache.org/maven-1.x/maven.pdf
-//            String fileName = strings[1];  // -> maven.pdf
-//            String extStorageDirectory = Environment.getExternalStorageDirectory().getAbsolutePath();
-//            File folder = new File(extStorageDirectory);
-//            folder.mkdir();
-//
-//            File pdfFile = new File(folder, fileName);
-//
-//            try{
-//                pdfFile.createNewFile();
-//            }catch (IOException e){
-//                e.printStackTrace();
-//            }
-//            connect.downloadFile(fileUrl, pdfFile);
-//            return null;
-//        }
-//    }
+    private class OkResListenerVariations implements Response.Listener {
+        @Override
+        public void onResponse(Object response) {
+
+        }
+    }
+
+    private class ErrListenerVariations implements Response.ErrorListener {
+        @Override
+        public void onErrorResponse(VolleyError error) {
+            error.printStackTrace();
+        }
+    }
 
 
 
@@ -193,11 +157,11 @@ public class MainActivityTest extends AppCompatActivity {
                 // input stream to read file - with 8k buffer
                 InputStream input = new BufferedInputStream(url.openStream(), 8192);
 
-                String timestamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
+//                String timestamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
 
 
                 //External directory path to save file
-                folder = Environment.getExternalStorageDirectory().getAbsolutePath();
+                folder = Environment.getExternalStorageDirectory().getPath() + "/ShahrdariPDF";
 
                 //Create androiddeft folder if it does not exist
                 File directory = new File(folder);
