@@ -67,31 +67,11 @@ public class Activity_Posts extends AppCompatActivity {
     private DatabaseManagement db;
 
     String[] lstNameMain = {"مالی", "شهرداری و املاک", "شورا", "سایر قوانین", "استخدامی", "جستجو"};
-/*
-    String[] subListMali = {"بخشنامه های بودجه", "دستورالعملهای مالی", "قوانین مالی", "نصاب معاملات"};
-    String[] subListAmlak = {"دستورالعملهای شهرداری", "قوانین شهرداری"};
-    String[] subListShora = {"دستورالعملهای شوراها", "قوانین شوراها"};
-
-
-    String[] pdfNameMaliBodje = {"بخشنامه بودجه سال 1395 شهرداری های کشور", "بخشنامه بودجه سال 1396 شهرداری های کشور", "بخشنامه بودجه سال 1397 شهرداري هاي كشور", "بخشنامه بودجه سال 1398 شهرداری های کشور", "دستورالعمل تهیه و تدوین بودحه شهرداری ها 1399به بعد"};
-    String[] pdfNameMaliDastor = {"آئین نامه حق جلسه اعضا کمیسیون ها", "آئین نامه حق جلسه به شوراهای اسلامی", "دستورالعمل  نحوه واگذاری ، ميزان و واریز تنخواه گردان", "دستورالعمل تحریر دفاتر قانونی در شهرداری، سازمانها و شرکت های وابسته", "دستورالعمل خزانه داری در شهرداری ها", "دستورالعمل شناسایی و پلاک کوبی اموال در شهرداری ها", "دستورالعمل کارگروه استانی نظارت بر امور حسابرسی شهرداری ها", "دستورالعمل نحوه ایجاد، تبدیل، نگهداری و امحاء اسناد و مدارک مالی شهرداری", "دستورالعمل نحوه هزینه کرد مواد 16 و 17 بودجه شهرداری", "دستورالعمل نحوه ی استفاده از خدمات مؤسسات حسابرسی", "شیوه نامه اجرایی کمیته تخصیص اعتبار"};
-    String[] pdfNameMaliRules = {"آیین نامه اجرایی نحوه وضع و وصول عوارض", "آئین نامه معاملاتی شهرداری ها به استثنا تهران و مرکز استان", "آئین نامه معاملاتی کلانشهرها و مراکز استان", "حقوق و مزایای شهرداران"};
-    String[] pdfNameMaliNasab = {"نصاب معاملات94", "نصاب معاملات95", "نصاب معاملات96", "نصاب معاملات97"};
-
-
-    String[] pdfNamesAmlakDastor = {"دستورالعمل اجرایی مشاغل و اصناف مزاحم شهری", "دستورالعمل واگذاری اتوبوس و بهره\u200Cبرداری \u200Cاز خطوط اتوبوسرانی شهری و حومه شهری"};
-    String[] pdfNamesAmlakRules = {"تعاریف محدوده و حریم شهر و نحوه تعیین آنها", "تعریف و ضوابط تقسیمات کشوری", "قانون شهرداری مصوب 1344 با اصلاحات و الحاقات بعدی آن", "قانون نوسازی و عمران شهری و آئین نامه ای مربوط"};
-
-
-    String[] pdfNamesShoraDastor = {"آیین\u200Cنامه نامگذاری شهرها، خیابان\u200Cها، اماکن و مؤسسات عمومی", "آئین نامه حق جلسه به شوراهای اسلامی", "دستورالعمل ترکیب کمیسیون های شوراها", "دستورالعمل شرح وظیفه هیأت رییسه و سخنگوی شوراهای", "دستورالعمل نحوره رسیدگی به طرح ها  ولوایح", "دستورالعمل نحوه اداره جلسات شوراها", "دستورالعمل نحوه انجام مراسم تحلیف شوراهای اسلامی کشور", "دستورالعمل نحوه ماموریت شوراها", "سفر شوراهای محلی به خارج از کشور"};
-    String[] pdfNamesShoraRules = {"آئین نامه های اجرایی شوراهای اسلامی", "آئین نامه های داخلی شوراهای شهر و شهرستان و استان و عالی لستانها", "قانون تشکیلات شوراهای اسلامی کشوری و انتخابات شوراهای مزبور مصوب 29 تیر 1365 با اصلاحیه های بعدی", "قانون تشکیلات ووظایف شوراها و انتخاب شهراران به همراه آئین نامه ها و دستورالعملهای", "قانون تشكيلات، وظايف و انتخابات شوراهاي اسلامي كشور و انتخاب شهرداران مصوب 1375"};
-
-    String[] pdfNamesAnotherRules = {"آیین نامه اجرایی بند “الف” ماده (26) قانون برگزاری مناقصات", "آیین نامه مناقصه امور ساختمان وزارت راه و راه آهن", "قانون احکام دائمی توسعه کشور", "قانون برنامه ششم توسعه", "قانون رسیدگی به تخلفات رانندگی و آیین\u200Cنامه اجرایی تبصره 1 ماده 15", "قانون رفع موانع توليد رقابت\u200Cپذير و ارتقاي نظام مالي کشور", "قانون مالیات بر ارزش افزوده و آیین نامه های اجرایی", "قانون مبارزه با پولشویی و آیین نامه اجرایی", "قانون هوای پاک"};
-*/
 
     String[] subListMali;
     String[] subListAmlak;
     String[] subListShora;
+    String[] subListAnotherRules;
 
     String[] pdfNameMaliBodje;
     String[] pdfNameMaliDastor;
@@ -106,12 +86,16 @@ public class Activity_Posts extends AppCompatActivity {
 
     String[] pdfNamesAnotherRules;
 
-    AlertDialog catSubList, pdf_selector, about_connect_us, alertlogin;
+    AlertDialog catSubList, pdf_selector, about_connect_us, alertlogin, alertAnotherRules;
     DrawerLayout drawerLayout_sr;
     NavigationView navigationview_sr;
 
     String cod = "";
     SharedPreferences preferences;
+
+
+    AlertDialog adOpenPDF;
+
 
     private static final String TAG = MainActivityTest.class.getSimpleName();
 
@@ -204,6 +188,7 @@ public class Activity_Posts extends AppCompatActivity {
         if (!login)
             AlertDialogLogIn();
 
+
     }
 
     private void AlertDialogLogIn() {
@@ -237,7 +222,6 @@ public class Activity_Posts extends AppCompatActivity {
 
     }
 
-
     // get String[]
     private class OkResListener implements Response.Listener {
         @Override
@@ -246,10 +230,10 @@ public class Activity_Posts extends AppCompatActivity {
 
             try {
                 JSONObject object = new JSONObject((String) response);
-
                 cod = object.getString("cod");
                 subListMali = object.getString("subListMali").split(",");
                 subListAmlak = object.getString("subListAmlak").split(",");
+                subListAnotherRules = object.getString("subListAnotherRules").split(",");
                 subListShora = object.getString("subListShora").split(",");
                 pdfNameMaliBodje = object.getString("pdfNameMaliBodje").split(",");
                 pdfNameMaliDastor = object.getString("pdfNameMaliDastor").split(",");
@@ -260,7 +244,6 @@ public class Activity_Posts extends AppCompatActivity {
                 pdfNamesShoraDastor = object.getString("pdfNamesShoraDastor").split(",");
                 pdfNamesShoraRules = object.getString("pdfNamesShoraRules").split(",");
                 pdfNamesAnotherRules = object.getString("pdfNamesAnotherRules").split(",");
-
 
             } catch (JSONException e) {
                 e.printStackTrace();
@@ -297,8 +280,27 @@ public class Activity_Posts extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    private void alertOpenPDF(final String[] stringArr) {
 
-    //pdf AlertDialogs ***********************************************
+        AlertDialog.Builder builderOPDF = new AlertDialog.Builder(Activity_Posts.this);
+        LinearLayout linearLayoutOPDF = (LinearLayout) getLayoutInflater().inflate(R.layout.alert_open_pdf, null, false);
+        ListView lstOpenPDF = linearLayoutOPDF.findViewById(R.id.lstOpenPDF);
+        ArrayAdapter arrayAdapterOPDF = new ArrayAdapter(Activity_Posts.this, android.R.layout.simple_list_item_1, stringArr);
+        lstOpenPDF.setAdapter(arrayAdapterOPDF);
+        lstOpenPDF.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                checkPDF(stringArr[i]);
+                adOpenPDF.dismiss();
+            }
+        });
+
+        builderOPDF.setView(linearLayoutOPDF);
+        adOpenPDF = builderOPDF.create();
+        adOpenPDF.show();
+
+
+    }
 
     //sub lists
     private void AlertDialogSubListMali() {
@@ -313,16 +315,16 @@ public class Activity_Posts extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 switch (subListMali[i]) {
                     case "بخشنامه های بودجه":
-                        AlertDialogPDFMaliBodje();
+                        alertOpenPDF(pdfNameMaliBodje);
                         break;
                     case "دستورالعملهای مالی":
-                        AlertDialogPDFMaliDastor();
+                        alertOpenPDF(pdfNameMaliDastor);
                         break;
                     case "قوانین مالی":
-                        AlertDialogPDFMaliRules();
+                        alertOpenPDF(pdfNameMaliRules);
                         break;
                     case "نصاب معاملات":
-                        AlertDialogPDFMaliNasab();
+                        alertOpenPDF(pdfNameMaliNasab);
                         break;
                 }
                 catSubList.dismiss();
@@ -347,10 +349,10 @@ public class Activity_Posts extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 switch (subListAmlak[i]) {
                     case "دستورالعملهای شهرداری":
-                        AlertDialogPDFAmlakDastor();
+                        alertOpenPDF(pdfNamesAmlakDastor);
                         break;
                     case "قوانین شهرداری":
-                        AlertDialogPDFAmlakRules();
+                        alertOpenPDF(pdfNamesAmlakRules);
                         break;
                 }
                 catSubList.dismiss();
@@ -375,10 +377,10 @@ public class Activity_Posts extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 switch (subListShora[i]) {
                     case "دستورالعملهای شوراها":
-                        AlertDialogPDFShoraDastor();
+                        alertOpenPDF(pdfNamesShoraDastor);
                         break;
                     case "قوانین شوراها":
-                        AlertDialogPDFShoraRules();
+                        alertOpenPDF(pdfNamesShoraRules);
                         break;
                 }
                 catSubList.dismiss();
@@ -392,371 +394,83 @@ public class Activity_Posts extends AppCompatActivity {
     }
 
     private void AlertDialogSubListAnotherRuls() {
+//        alertOpenPDF(pdfNamesAnotherRules);
+
 
         AlertDialog.Builder builder_pdfSelector = new AlertDialog.Builder(Activity_Posts.this);
         LinearLayout linearLayout_pdfSelector = (LinearLayout) getLayoutInflater().inflate(R.layout.pdf_selector, null, false);
-        final ListView listPDFSelector = linearLayout_pdfSelector.findViewById(R.id.listPDFSelector);
-        ArrayAdapter arrayAdapterPDF = new ArrayAdapter(Activity_Posts.this, android.R.layout.simple_list_item_1, pdfNamesAnotherRules);
+        ListView listPDFSelector = linearLayout_pdfSelector.findViewById(R.id.listPDFSelector);
+        ArrayAdapter arrayAdapterPDF = new ArrayAdapter(Activity_Posts.this, android.R.layout.simple_list_item_1, subListAnotherRules);
         listPDFSelector.setAdapter(arrayAdapterPDF);
         listPDFSelector.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                checkPDF(pdfNamesAnotherRules[i]);
+                switch (subListAnotherRules[i]) {
+                    case "سایر قوانین":
+                        alertOpenPDF(pdfNamesAnotherRules);
+                        break;
+                }
+                alertAnotherRules.dismiss();
+            }
+        });
 
-//                Intent intentPDF = new Intent(Activity_Posts.this, Activity_PDF_View.class);
-//                switch (pdfNamesAnotherRules[i]) {
-//                    case "آیین نامه اجرایی بند “الف” ماده (26) قانون برگزاری مناقصات":
-//                        intentPDF.putExtra("KeyPDF", "آیین نامه اجرایی بند “الف” ماده (26) قانون برگزاری مناقصات");
-//                        break;
-//                    case "آیین نامه مناقصه امور ساختمان وزارت راه و راه آهن":
-//                        intentPDF.putExtra("KeyPDF", "آیین نامه مناقصه امور ساختمان وزارت راه و راه آهن");
-//                        break;
-//                    case "قانون احکام دائمی توسعه کشور":
-//                        intentPDF.putExtra("KeyPDF", "قانون احکام دائمی توسعه کشور");
-//                        break;
-//                    case "قانون برنامه ششم توسعه":
-//                        intentPDF.putExtra("KeyPDF", "قانون برنامه ششم توسعه");
-//                        break;
-//                    case "قانون رسیدگی به تخلفات رانندگی و آیین\u200Cنامه اجرایی تبصره 1 ماده 15":
-//                        intentPDF.putExtra("KeyPDF", "قانون رسیدگی به تخلفات رانندگی و آیین\u200Cنامه اجرایی تبصره 1 ماده 15");
-//                        break;
-//                    case "قانون رفع موانع توليد رقابت\u200Cپذير و ارتقاي نظام مالي کشور":
-//                        intentPDF.putExtra("KeyPDF", "قانون رفع موانع توليد رقابت\u200Cپذير و ارتقاي نظام مالي کشور");
-//                        break;
-//                    case "قانون مالیات بر ارزش افزوده و آیین نامه های اجرایی":
-//                        intentPDF.putExtra("KeyPDF", "قانون مالیات بر ارزش افزوده و آیین نامه های اجرایی");
-//                        break;
-//                    case "قانون مبارزه با پولشویی و آیین نامه اجرایی":
-//                        intentPDF.putExtra("KeyPDF", "قانون مبارزه با پولشویی و آیین نامه اجرایی");
-//                        break;
-//                    case "قانون هوای پاک":
-//                        intentPDF.putExtra("KeyPDF", "قانون هوای پاک");
-//                        break;
+        builder_pdfSelector.setView(linearLayout_pdfSelector);
+        alertAnotherRules = builder_pdfSelector.create();
+        alertAnotherRules.show();
+
+
 //
-//                }
-//                startActivity(intentPDF);
-                pdf_selector.dismiss();
-            }
-        });
-
-        builder_pdfSelector.setView(linearLayout_pdfSelector);
-        pdf_selector = builder_pdfSelector.create();
-        pdf_selector.show();
-
-    }
-
-
-    private void AlertDialogPDFMaliBodje() {
-
-        AlertDialog.Builder builder_pdfSelector = new AlertDialog.Builder(Activity_Posts.this);
-        LinearLayout linearLayout_pdfSelector = (LinearLayout) getLayoutInflater().inflate(R.layout.pdf_selector, null, false);
-        ListView listPDFSelector = linearLayout_pdfSelector.findViewById(R.id.listPDFSelector);
-        ArrayAdapter arrayAdapterPDF = new ArrayAdapter(Activity_Posts.this, android.R.layout.simple_list_item_1, pdfNameMaliBodje);
-        listPDFSelector.setAdapter(arrayAdapterPDF);
-        listPDFSelector.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                checkPDF(pdfNameMaliBodje[i]);
-
-//                Intent intentPDF = new Intent(Activity_Posts.this, Activity_PDF_View.class);
-//                switch (pdfNameMaliBodje[i]) {
-//                    case "بخشنامه بودجه سال 1395 شهرداری های کشور":
-//                        intentPDF.putExtra("KeyPDF", "بخشنامه بودجه سال 1395 شهرداری های کشور");
-//                        break;
-//                    case "بخشنامه بودجه سال 1396 شهرداری های کشور":
-//                        intentPDF.putExtra("KeyPDF", "بخشنامه بودجه سال 1396 شهرداری های کشور");
-//                        break;
-//                    case "بخشنامه بودجه سال 1397 شهرداري هاي كشور":
-//                        intentPDF.putExtra("KeyPDF", "بخشنامه بودجه سال 1397 شهرداري هاي كشور");
-//                        break;
-//                    case "بخشنامه بودجه سال 1398 شهرداری های کشور":
-//                        intentPDF.putExtra("KeyPDF", "بخشنامه بودجه سال 1398 شهرداری های کشور");
-//                        break;
-//                    case "دستورالعمل تهیه و تدوین بودحه شهرداری ها 1399به بعد":
-//                        intentPDF.putExtra("KeyPDF", "دستورالعمل تهیه و تدوین بودحه شهرداری ها 1399به بعد");
-//                        break;
-//                }
-//                startActivity(intentPDF);
-                pdf_selector.dismiss();
-            }
-        });
-
-        builder_pdfSelector.setView(linearLayout_pdfSelector);
-        pdf_selector = builder_pdfSelector.create();
-        pdf_selector.show();
-
-    }
-
-    private void AlertDialogPDFMaliDastor() {
-
-        AlertDialog.Builder builder_pdfSelector = new AlertDialog.Builder(Activity_Posts.this);
-        LinearLayout linearLayout_pdfSelector = (LinearLayout) getLayoutInflater().inflate(R.layout.pdf_selector, null, false);
-        ListView listPDFSelector = linearLayout_pdfSelector.findViewById(R.id.listPDFSelector);
-        ArrayAdapter arrayAdapterPDF = new ArrayAdapter(Activity_Posts.this, android.R.layout.simple_list_item_1, pdfNameMaliDastor);
-        listPDFSelector.setAdapter(arrayAdapterPDF);
-        listPDFSelector.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                checkPDF(pdfNameMaliDastor[i]);
-
-//                Intent intentPDF = new Intent(Activity_Posts.this, Activity_PDF_View.class);
-//                switch (pdfNameMaliDastor[i]) {
-//                    case "آئین نامه حق جلسه اعضا کمیسیون ها":
-//                        intentPDF.putExtra("KeyPDF", "آئین نامه حق جلسه اعضا کمیسیون ها");
-//                        break;
-//                    case "آئین نامه حق جلسه به شوراهای اسلامی":
-//                        intentPDF.putExtra("KeyPDF", "آئین نامه حق جلسه به شوراهای اسلامی");
-//                        break;
-//                    case "دستورالعمل  نحوه واگذاری ، ميزان و واریز تنخواه گردان":
-//                        intentPDF.putExtra("KeyPDF", "دستورالعمل  نحوه واگذاری ، ميزان و واریز تنخواه گردان");
-//                        break;
-//                    case "دستورالعمل تحریر دفاتر قانونی در شهرداری، سازمانها و شرکت های وابسته":
-//                        intentPDF.putExtra("KeyPDF", "دستورالعمل تحریر دفاتر قانونی در شهرداری، سازمانها و شرکت های وابسته");
-//                        break;
-//                    case "دستورالعمل خزانه داری در شهرداری ها":
-//                        intentPDF.putExtra("KeyPDF", "دستورالعمل خزانه داری در شهرداری ها");
-//                        break;
-//                    case "دستورالعمل شناسایی و پلاک کوبی اموال در شهرداری ها":
-//                        intentPDF.putExtra("KeyPDF", "دستورالعمل شناسایی و پلاک کوبی اموال در شهرداری ها");
-//                        break;
-//                    case "دستورالعمل کارگروه استانی نظارت بر امور حسابرسی شهرداری ها":
-//                        intentPDF.putExtra("KeyPDF", "دستورالعمل کارگروه استانی نظارت بر امور حسابرسی شهرداری ها");
-//                        break;
-//                    case "دستورالعمل نحوه ایجاد، تبدیل، نگهداری و امحاء اسناد و مدارک مالی شهرداری":
-//                        intentPDF.putExtra("KeyPDF", "دستورالعمل نحوه ایجاد، تبدیل، نگهداری و امحاء اسناد و مدارک مالی شهرداری");
-//                        break;
-//                    case "دستورالعمل نحوه هزینه کرد مواد 16 و 17 بودجه شهرداری":
-//                        intentPDF.putExtra("KeyPDF", "دستورالعمل نحوه هزینه کرد مواد 16 و 17 بودجه شهرداری");
-//                        break;
-//                    case "دستورالعمل نحوه ی استفاده از خدمات مؤسسات حسابرسی":
-//                        intentPDF.putExtra("KeyPDF", "دستورالعمل نحوه ی استفاده از خدمات مؤسسات حسابرسی");
-//                        break;
-//                    case "شیوه نامه اجرایی کمیته تخصیص اعتبار":
-//                        intentPDF.putExtra("KeyPDF", "شیوه نامه اجرایی کمیته تخصیص اعتبار");
-//                        break;
-//                }
-//                startActivity(intentPDF);
-                pdf_selector.dismiss();
-            }
-        });
-
-        builder_pdfSelector.setView(linearLayout_pdfSelector);
-        pdf_selector = builder_pdfSelector.create();
-        pdf_selector.show();
-
-    }
-
-    private void AlertDialogPDFMaliRules() {
-
-        AlertDialog.Builder builder_pdfSelector = new AlertDialog.Builder(Activity_Posts.this);
-        LinearLayout linearLayout_pdfSelector = (LinearLayout) getLayoutInflater().inflate(R.layout.pdf_selector, null, false);
-        ListView listPDFSelector = linearLayout_pdfSelector.findViewById(R.id.listPDFSelector);
-        ArrayAdapter arrayAdapterPDF = new ArrayAdapter(Activity_Posts.this, android.R.layout.simple_list_item_1, pdfNameMaliRules);
-        listPDFSelector.setAdapter(arrayAdapterPDF);
-        listPDFSelector.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                checkPDF(pdfNameMaliRules[i]);
-
-//                Intent intentPDF = new Intent(Activity_Posts.this, Activity_PDF_View.class);
-//                switch (pdfNameMaliRules[i]) {
-//                    case "آیین نامه اجرایی نحوه وضع و وصول عوارض":
-//                        intentPDF.putExtra("KeyPDF", "آیین نامه اجرایی نحوه وضع و وصول عوارض");
-//                        break;
-//                    case "آئین نامه معاملاتی شهرداری ها به استثنا تهران و مرکز استان":
-//                        intentPDF.putExtra("KeyPDF", "آئین نامه معاملاتی شهرداری ها به استثنا تهران و مرکز استان");
-//                        break;
-//                    case "آئین نامه معاملاتی کلانشهرها و مراکز استان":
-//                        intentPDF.putExtra("KeyPDF", "آئین نامه معاملاتی کلانشهرها و مراکز استان");
-//                        break;
-//                    case "حقوق و مزایای شهرداران":
-//                        intentPDF.putExtra("KeyPDF", "حقوق و مزایای شهرداران");
-//                        break;
-//                }
-//                startActivity(intentPDF);
-                pdf_selector.dismiss();
-            }
-        });
-
-        builder_pdfSelector.setView(linearLayout_pdfSelector);
-        pdf_selector = builder_pdfSelector.create();
-        pdf_selector.show();
-
-    }
-
-    private void AlertDialogPDFMaliNasab() {
-
-        AlertDialog.Builder builder_pdfSelector = new AlertDialog.Builder(Activity_Posts.this);
-        LinearLayout linearLayout_pdfSelector = (LinearLayout) getLayoutInflater().inflate(R.layout.pdf_selector, null, false);
-        ListView listPDFSelector = linearLayout_pdfSelector.findViewById(R.id.listPDFSelector);
-        ArrayAdapter arrayAdapterPDF = new ArrayAdapter(Activity_Posts.this, android.R.layout.simple_list_item_1, pdfNameMaliNasab);
-        listPDFSelector.setAdapter(arrayAdapterPDF);
-        listPDFSelector.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                checkPDF(pdfNameMaliNasab[i]);
-
-//                Intent intentPDF = new Intent(Activity_Posts.this, Activity_PDF_View.class);
-//                switch (pdfNameMaliNasab[i]) {
-//                    case "نصاب معاملات94":
-//                        intentPDF.putExtra("KeyPDF", "نصاب معاملات94");
-//                        break;
-//                    case "نصاب معاملات95":
-//                        intentPDF.putExtra("KeyPDF", "نصاب معاملات95");
-//                        break;
-//                    case "نصاب معاملات96":
-//                        intentPDF.putExtra("KeyPDF", "نصاب معاملات96");
-//                        break;
-//                    case "نصاب معاملات97":
-//                        intentPDF.putExtra("KeyPDF", "نصاب معاملات97");
-//                        break;
-//                }
-//                startActivity(intentPDF);
-                pdf_selector.dismiss();
-            }
-        });
-
-        builder_pdfSelector.setView(linearLayout_pdfSelector);
-        pdf_selector = builder_pdfSelector.create();
-        pdf_selector.show();
-
-    }
-
-
-    private void AlertDialogPDFAmlakDastor() {
-
-        AlertDialog.Builder builder_pdfSelector = new AlertDialog.Builder(Activity_Posts.this);
-        LinearLayout linearLayout_pdfSelector = (LinearLayout) getLayoutInflater().inflate(R.layout.pdf_selector, null, false);
-        ListView listPDFSelector = linearLayout_pdfSelector.findViewById(R.id.listPDFSelector);
-        ArrayAdapter arrayAdapterPDF = new ArrayAdapter(Activity_Posts.this, android.R.layout.simple_list_item_1, pdfNamesAmlakDastor);
-        listPDFSelector.setAdapter(arrayAdapterPDF);
-        listPDFSelector.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                checkPDF(pdfNamesAmlakDastor[i]);
+//        AlertDialog.Builder builder_pdfSelector = new AlertDialog.Builder(Activity_Posts.this);
+//        LinearLayout linearLayout_pdfSelector = (LinearLayout) getLayoutInflater().inflate(R.layout.pdf_selector, null, false);
+//        final ListView listPDFSelector = linearLayout_pdfSelector.findViewById(R.id.listPDFSelector);
+//        ArrayAdapter arrayAdapterPDF = new ArrayAdapter(Activity_Posts.this, android.R.layout.simple_list_item_1, pdfNamesAnotherRules);
+//        listPDFSelector.setAdapter(arrayAdapterPDF);
+//        listPDFSelector.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+//                checkPDF(pdfNamesAnotherRules[i]);
 //
-//                Intent intentPDF = new Intent(Activity_Posts.this, Activity_PDF_View.class);
-//                switch (pdfNamesAmlakDastor[i]) {
-//                    case "دستورالعمل اجرایی مشاغل و اصناف مزاحم شهری":
-//                        intentPDF.putExtra("KeyPDF", "دستورالعمل اجرایی مشاغل و اصناف مزاحم شهری");
-//                        break;
-//                    case "دستورالعمل واگذاری اتوبوس و بهره\u200Cبرداری \u200Cاز خطوط اتوبوسرانی شهری و حومه شهری":
-//                        intentPDF.putExtra("KeyPDF", "دستورالعمل واگذاری اتوبوس و بهره\u200Cبرداری \u200Cاز خطوط اتوبوسرانی شهری و حومه شهری");
-//                        break;
-//                }
-//                startActivity(intentPDF);
-                pdf_selector.dismiss();
-            }
-        });
-
-        builder_pdfSelector.setView(linearLayout_pdfSelector);
-        pdf_selector = builder_pdfSelector.create();
-        pdf_selector.show();
-
-    }
-
-    private void AlertDialogPDFAmlakRules() {
-
-        AlertDialog.Builder builder_pdfSelector = new AlertDialog.Builder(Activity_Posts.this);
-        LinearLayout linearLayout_pdfSelector = (LinearLayout) getLayoutInflater().inflate(R.layout.pdf_selector, null, false);
-        ListView listPDFSelector = linearLayout_pdfSelector.findViewById(R.id.listPDFSelector);
-        ArrayAdapter arrayAdapterPDF = new ArrayAdapter(Activity_Posts.this, android.R.layout.simple_list_item_1, pdfNamesAmlakRules);
-        listPDFSelector.setAdapter(arrayAdapterPDF);
-        listPDFSelector.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                checkPDF(pdfNamesAmlakRules[i]);
-//                Intent intentPDF = new Intent(Activity_Posts.this, Activity_PDF_View.class);
-//                switch (pdfNamesAmlakRules[i]) {
-//                    case "تعاریف محدوده و حریم شهر و نحوه تعیین آنها":
-//                        intentPDF.putExtra("KeyPDF", "تعاریف محدوده و حریم شهر و نحوه تعیین آنها");
-//                        break;
-//                    case "تعریف و ضوابط تقسیمات کشوری":
-//                        intentPDF.putExtra("KeyPDF", "تعریف و ضوابط تقسیمات کشوری");
-//                        break;
-//                    case "قانون شهرداری مصوب 1344 با اصلاحات و الحاقات بعدی آن":
-//                        intentPDF.putExtra("KeyPDF", "قانون شهرداری مصوب 1344 با اصلاحات و الحاقات بعدی آن");
-//                        break;
-//                    case "قانون نوسازی و عمران شهری و آئین نامه ای مربوط":
-//                        intentPDF.putExtra("KeyPDF", "قانون نوسازی و عمران شهری و آئین نامه ای مربوط");
-//                        break;
-//                }
-//                startActivity(intentPDF);
-                pdf_selector.dismiss();
-            }
-        });
-
-        builder_pdfSelector.setView(linearLayout_pdfSelector);
-        pdf_selector = builder_pdfSelector.create();
-        pdf_selector.show();
-
-    }
-
-
-    private void AlertDialogPDFShoraDastor() {
-
-        AlertDialog.Builder builder_pdfSelector = new AlertDialog.Builder(Activity_Posts.this);
-        LinearLayout linearLayout_pdfSelector = (LinearLayout) getLayoutInflater().inflate(R.layout.pdf_selector, null, false);
-        ListView listPDFSelector = linearLayout_pdfSelector.findViewById(R.id.listPDFSelector);
-        ArrayAdapter arrayAdapterPDF = new ArrayAdapter(Activity_Posts.this, android.R.layout.simple_list_item_1, pdfNamesShoraDastor);
-        listPDFSelector.setAdapter(arrayAdapterPDF);
-        listPDFSelector.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                checkPDF(pdfNamesShoraDastor[i]);
-                pdf_selector.dismiss();
-            }
-
-        });
-
-        builder_pdfSelector.setView(linearLayout_pdfSelector);
-        pdf_selector = builder_pdfSelector.create();
-        pdf_selector.show();
-
-    }
-
-    private void AlertDialogPDFShoraRules() {
-
-        AlertDialog.Builder builder_pdfSelector = new AlertDialog.Builder(Activity_Posts.this);
-        LinearLayout linearLayout_pdfSelector = (LinearLayout) getLayoutInflater().inflate(R.layout.pdf_selector, null, false);
-        ListView listPDFSelector = linearLayout_pdfSelector.findViewById(R.id.listPDFSelector);
-        ArrayAdapter arrayAdapterPDF = new ArrayAdapter(Activity_Posts.this, android.R.layout.simple_list_item_1, pdfNamesShoraRules);
-        listPDFSelector.setAdapter(arrayAdapterPDF);
-        listPDFSelector.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                checkPDF(pdfNamesShoraRules[i]);
+////                Intent intentPDF = new Intent(Activity_Posts.this, Activity_PDF_View.class);
+////                switch (pdfNamesAnotherRules[i]) {
+////                    case "آیین نامه اجرایی بند “الف” ماده (26) قانون برگزاری مناقصات":
+////                        intentPDF.putExtra("KeyPDF", "آیین نامه اجرایی بند “الف” ماده (26) قانون برگزاری مناقصات");
+////                        break;
+////                    case "آیین نامه مناقصه امور ساختمان وزارت راه و راه آهن":
+////                        intentPDF.putExtra("KeyPDF", "آیین نامه مناقصه امور ساختمان وزارت راه و راه آهن");
+////                        break;
+////                    case "قانون احکام دائمی توسعه کشور":
+////                        intentPDF.putExtra("KeyPDF", "قانون احکام دائمی توسعه کشور");
+////                        break;
+////                    case "قانون برنامه ششم توسعه":
+////                        intentPDF.putExtra("KeyPDF", "قانون برنامه ششم توسعه");
+////                        break;
+////                    case "قانون رسیدگی به تخلفات رانندگی و آیین\u200Cنامه اجرایی تبصره 1 ماده 15":
+////                        intentPDF.putExtra("KeyPDF", "قانون رسیدگی به تخلفات رانندگی و آیین\u200Cنامه اجرایی تبصره 1 ماده 15");
+////                        break;
+////                    case "قانون رفع موانع توليد رقابت\u200Cپذير و ارتقاي نظام مالي کشور":
+////                        intentPDF.putExtra("KeyPDF", "قانون رفع موانع توليد رقابت\u200Cپذير و ارتقاي نظام مالي کشور");
+////                        break;
+////                    case "قانون مالیات بر ارزش افزوده و آیین نامه های اجرایی":
+////                        intentPDF.putExtra("KeyPDF", "قانون مالیات بر ارزش افزوده و آیین نامه های اجرایی");
+////                        break;
+////                    case "قانون مبارزه با پولشویی و آیین نامه اجرایی":
+////                        intentPDF.putExtra("KeyPDF", "قانون مبارزه با پولشویی و آیین نامه اجرایی");
+////                        break;
+////                    case "قانون هوای پاک":
+////                        intentPDF.putExtra("KeyPDF", "قانون هوای پاک");
+////                        break;
+////
+////                }
+////                startActivity(intentPDF);
+//                pdf_selector.dismiss();
+//            }
+//        });
 //
-//                Intent intentPDF = new Intent(Activity_Posts.this, Activity_PDF_View.class);
-//                switch (pdfNamesShoraRules[i]) {
-//                    case "آئین نامه های اجرایی شوراهای اسلامی":
-//                        intentPDF.putExtra("KeyPDF", "آئین نامه های اجرایی شوراهای اسلامی");
-//                        break;
-//                    case "آئین نامه های داخلی شوراهای شهر و شهرستان و استان و عالی لستانها":
-//                        intentPDF.putExtra("KeyPDF", "آئین نامه های داخلی شوراهای شهر و شهرستان و استان و عالی لستانها");
-//                        break;
-//                    case "قانون تشکیلات شوراهای اسلامی کشوری و انتخابات شوراهای مزبور مصوب 29 تیر 1365 با اصلاحیه های بعدی":
-//                        intentPDF.putExtra("KeyPDF", "قانون تشکیلات شوراهای اسلامی کشوری و انتخابات شوراهای مزبور مصوب 29 تیر 1365 با اصلاحیه های بعدی");
-//                        break;
-//                    case "قانون تشکیلات ووظایف شوراها و انتخاب شهراران به همراه آئین نامه ها و دستورالعملهای":
-//                        intentPDF.putExtra("KeyPDF", "قانون تشکیلات ووظایف شوراها و انتخاب شهراران به همراه آئین نامه ها و دستورالعملهای");
-//                        break;
-//                    case "قانون تشكيلات، وظايف و انتخابات شوراهاي اسلامي كشور و انتخاب شهرداران مصوب 1375":
-//                        intentPDF.putExtra("KeyPDF", "قانون تشكيلات، وظايف و انتخابات شوراهاي اسلامي كشور و انتخاب شهرداران مصوب 1375");
-//                        break;
-//                }
-//                startActivity(intentPDF);
-                pdf_selector.dismiss();
-            }
-        });
-
-        builder_pdfSelector.setView(linearLayout_pdfSelector);
-        pdf_selector = builder_pdfSelector.create();
-        pdf_selector.show();
+//        builder_pdfSelector.setView(linearLayout_pdfSelector);
+//        pdf_selector = builder_pdfSelector.create();
+//        pdf_selector.show();
 
     }
-
-    //pdf AlertDialogs ***********************************************
 
 
     private void AlertDialogConnectUS() {
@@ -856,24 +570,6 @@ public class Activity_Posts extends AppCompatActivity {
         }
     }
 
-    @Override
-    public void onBackPressed() {
-        if (drawerLayout_sr.isDrawerOpen(Gravity.RIGHT)) {
-            drawerLayout_sr.closeDrawer(Gravity.RIGHT);
-        } else {
-            if (TimeBackPressed + Time_Between_Two_Back > System.currentTimeMillis()) {
-                super.onBackPressed();
-                return;
-            } else {
-                Toast.makeText(getBaseContext(), "برای خروج دوباره کلیک کنید", Toast.LENGTH_SHORT).show();
-            }
-            TimeBackPressed = System.currentTimeMillis();
-
-            //   super.onBackPressed();
-        }
-    }
-
-
     private boolean getFileNames(String namePdf) {
 
         File f = new File(Environment.getExternalStorageDirectory().getPath() + "/ShahrdariPDF");
@@ -894,10 +590,10 @@ public class Activity_Posts extends AppCompatActivity {
             Intent intentPDF = new Intent(Activity_Posts.this, Activity_PDF_View.class);
             intentPDF.putExtra("KeyPDF", s + ".pdf");
             startActivity(intentPDF);
-            pdf_selector.dismiss();
+            adOpenPDF.dismiss();
         } else {
             new Activity_Posts.DownloadFile().execute("http://www.azmoonshahri.ir/meysam/" + s + ".pdf", s + ".pdf");
-            pdf_selector.dismiss();
+            adOpenPDF.dismiss();
         }
 
     }
@@ -1006,6 +702,23 @@ public class Activity_Posts extends AppCompatActivity {
             Intent intentPDF = new Intent(Activity_Posts.this, Activity_PDF_View.class);
             intentPDF.putExtra("KeyPDF", message);
             startActivity(intentPDF);
+        }
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (drawerLayout_sr.isDrawerOpen(Gravity.RIGHT)) {
+            drawerLayout_sr.closeDrawer(Gravity.RIGHT);
+        } else {
+            if (TimeBackPressed + Time_Between_Two_Back > System.currentTimeMillis()) {
+                super.onBackPressed();
+                return;
+            } else {
+                Toast.makeText(getBaseContext(), "برای خروج دوباره کلیک کنید", Toast.LENGTH_SHORT).show();
+            }
+            TimeBackPressed = System.currentTimeMillis();
+
+            //   super.onBackPressed();
         }
     }
 

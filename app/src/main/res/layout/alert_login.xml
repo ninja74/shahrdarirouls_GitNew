@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:text="وارد کردن کد فعال سازی"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:id="@+id/edtCod"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btnCod"
+        android:layout_width="match_parent"
+        android:text="بررسی کردن"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
