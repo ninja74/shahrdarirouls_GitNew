@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">قوانین شهرداری</string>
+    <string name="stTop">استانداری مرکزی</string>
+    <string name="stDown">دفتر امور شهری و شوراها</string>
 
 
     <string name="StringAboutUs"><![CDATA[
@@ -23,6 +25,7 @@
 
 </html>
 ]]></string>
-
+    <string name="AlertCantConnect">خطا در ارتباط</string>
+    <string name="AlertCheckNetAgain">لطفا ارتباط خود با اینترنت را چک نمایید</string>
 
 </resources>

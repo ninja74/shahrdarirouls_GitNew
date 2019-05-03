@@ -58,6 +58,9 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
+import kotlin.random.Random;
+import libs.mjn.prettydialog.PrettyDialog;
+import libs.mjn.prettydialog.PrettyDialogCallback;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class Activity_Posts extends AppCompatActivity {
@@ -72,6 +75,7 @@ public class Activity_Posts extends AppCompatActivity {
     String[] subListAmlak;
     String[] subListShora;
     String[] subListAnotherRules;
+    String[] subListEstekgDami;
 
     String[] pdfNameMaliBodje;
     String[] pdfNameMaliDastor;
@@ -85,13 +89,15 @@ public class Activity_Posts extends AppCompatActivity {
     String[] pdfNamesShoraRules;
 
     String[] pdfNamesAnotherRules;
+    String[] pdfNamesEstekgDami;
 
-    AlertDialog catSubList, pdf_selector, about_connect_us, alertlogin, alertAnotherRules;
+    AlertDialog catSubList, pdf_selector, about_connect_us, alertlogin, alertAnotherRules, alertEstekgDami;
     DrawerLayout drawerLayout_sr;
     NavigationView navigationview_sr;
 
     String cod = "";
     SharedPreferences preferences;
+    private checkInternet internet;
 
 
     AlertDialog adOpenPDF;
@@ -111,13 +117,9 @@ public class Activity_Posts extends AppCompatActivity {
         fontSize.setFontSize();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_page);
-
-
-        String url = "http://www.azmoonshahri.ir/meysam/shahrDari.php";
-
-        StringRequest requestCoupons = new StringRequest(Request.Method.GET, url, new OkResListener(), new ErrListener());
-        RequestQueue requestQueue = Volley.newRequestQueue(Activity_Posts.this);
-        requestQueue.add(requestCoupons);
+        preferences = getSharedPreferences("shahrdariroulS", 0);
+        defaults();
+        internet = new checkInternet(this);
 
 
         if (!(Build.VERSION.SDK_INT < 23)) {
@@ -159,7 +161,11 @@ public class Activity_Posts extends AppCompatActivity {
                         break;
 
                     case 4:
-                        Toast.makeText(Activity_Posts.this, "درحال حاضر کتابی برای این مجموعه ارائه نشده است", Toast.LENGTH_SHORT).show();
+                        if (!pdfNamesEstekgDami[0].equals("none"))
+                            AlertDialogSubListEstekgDami();
+                        else
+                            Toast.makeText(Activity_Posts.this, "هیچ کتابی وجود ندارد", Toast.LENGTH_SHORT).show();
+
                         break;
 
                     case 5:
@@ -183,82 +189,38 @@ public class Activity_Posts extends AppCompatActivity {
             }
         });
 
+
+    }
+
+    private void defaults() {
+
+
         preferences = getSharedPreferences("shahrdariroulS", 0);
         boolean login = preferences.getBoolean("logIn", false);
-        if (!login)
-            AlertDialogLogIn();
 
-
-    }
-
-    private void AlertDialogLogIn() {
-
-        AlertDialog.Builder builder_login = new AlertDialog.Builder(Activity_Posts.this);
-        LinearLayout linearLayout_login = (LinearLayout) getLayoutInflater().inflate(R.layout.alert_login, null, false);
-        final EditText edtCod = linearLayout_login.findViewById(R.id.edtCod);
-        Button btnCod = linearLayout_login.findViewById(R.id.btnCod);
-
-        btnCod.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String userCod = edtCod.getText().toString();
-                if (userCod.equals(cod)) {
-                    Toast.makeText(Activity_Posts.this, "خوش آمدید", Toast.LENGTH_SHORT).show();
-                    SharedPreferences.Editor editor = preferences.edit();
-                    editor.putBoolean("logIn", true);
-                    editor.apply();
-                    alertlogin.dismiss();
-                } else {
-                    Toast.makeText(Activity_Posts.this, "کد وارد شده صحیح نمی باشد", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-
-        builder_login.setView(linearLayout_login);
-        alertlogin = builder_login.create();
-        alertlogin.show();
-        alertlogin.setCancelable(false);
-        alertlogin.setCanceledOnTouchOutside(false);
-
-    }
-
-    // get String[]
-    private class OkResListener implements Response.Listener {
-        @Override
-        public void onResponse(Object response) {
-
-
-            try {
-                JSONObject object = new JSONObject((String) response);
-                cod = object.getString("cod");
-                subListMali = object.getString("subListMali").split(",");
-                subListAmlak = object.getString("subListAmlak").split(",");
-                subListAnotherRules = object.getString("subListAnotherRules").split(",");
-                subListShora = object.getString("subListShora").split(",");
-                pdfNameMaliBodje = object.getString("pdfNameMaliBodje").split(",");
-                pdfNameMaliDastor = object.getString("pdfNameMaliDastor").split(",");
-                pdfNameMaliRules = object.getString("pdfNameMaliRules").split(",");
-                pdfNameMaliNasab = object.getString("pdfNameMaliNasab").split(",");
-                pdfNamesAmlakDastor = object.getString("pdfNamesAmlakDastor").split(",");
-                pdfNamesAmlakRules = object.getString("pdfNamesAmlakRules").split(",");
-                pdfNamesShoraDastor = object.getString("pdfNamesShoraDastor").split(",");
-                pdfNamesShoraRules = object.getString("pdfNamesShoraRules").split(",");
-                pdfNamesAnotherRules = object.getString("pdfNamesAnotherRules").split(",");
-
-            } catch (JSONException e) {
-                e.printStackTrace();
-
-
-            }
+        if (!login) {
+            finish();
+            Toast.makeText(this, "کد شما صحیح نیست", Toast.LENGTH_SHORT).show();
         }
+
+        subListMali = preferences.getString("subListMali", "null").split(",");
+        subListAmlak = preferences.getString("subListAmlak", "null").split(",");
+        subListAnotherRules = preferences.getString("subListAnotherRules", "null").split(",");
+        subListEstekgDami = preferences.getString("subListEstekgDami", "null").split(",");
+        subListShora = preferences.getString("subListShora", "null").split(",");
+        pdfNameMaliBodje = preferences.getString("pdfNameMaliBodje", "null").split(",");
+        pdfNameMaliDastor = preferences.getString("pdfNameMaliDastor", "null").split(",");
+        pdfNameMaliRules = preferences.getString("pdfNameMaliRules", "null").split(",");
+        pdfNameMaliNasab = preferences.getString("pdfNameMaliNasab", "null").split(",");
+        pdfNamesAmlakDastor = preferences.getString("pdfNamesAmlakDastor", "null").split(",");
+        pdfNamesAmlakRules = preferences.getString("pdfNamesAmlakRules", "null").split(",");
+        pdfNamesShoraDastor = preferences.getString("pdfNamesShoraDastor", "null").split(",");
+        pdfNamesShoraRules = preferences.getString("pdfNamesShoraRules", "null").split(",");
+        pdfNamesAnotherRules = preferences.getString("pdfNamesAnotherRules", "null").split(",");
+        pdfNamesEstekgDami = preferences.getString("pdfNamesEstekgDami", "null").split(",");
+
     }
 
-    private class ErrListener implements Response.ErrorListener {
-        @Override
-        public void onErrorResponse(VolleyError error) {
-            error.printStackTrace();
-        }
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -292,6 +254,7 @@ public class Activity_Posts extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 checkPDF(stringArr[i]);
                 adOpenPDF.dismiss();
+
             }
         });
 
@@ -419,56 +382,33 @@ public class Activity_Posts extends AppCompatActivity {
         alertAnotherRules.show();
 
 
-//
-//        AlertDialog.Builder builder_pdfSelector = new AlertDialog.Builder(Activity_Posts.this);
-//        LinearLayout linearLayout_pdfSelector = (LinearLayout) getLayoutInflater().inflate(R.layout.pdf_selector, null, false);
-//        final ListView listPDFSelector = linearLayout_pdfSelector.findViewById(R.id.listPDFSelector);
-//        ArrayAdapter arrayAdapterPDF = new ArrayAdapter(Activity_Posts.this, android.R.layout.simple_list_item_1, pdfNamesAnotherRules);
-//        listPDFSelector.setAdapter(arrayAdapterPDF);
-//        listPDFSelector.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-//                checkPDF(pdfNamesAnotherRules[i]);
-//
-////                Intent intentPDF = new Intent(Activity_Posts.this, Activity_PDF_View.class);
-////                switch (pdfNamesAnotherRules[i]) {
-////                    case "آیین نامه اجرایی بند “الف” ماده (26) قانون برگزاری مناقصات":
-////                        intentPDF.putExtra("KeyPDF", "آیین نامه اجرایی بند “الف” ماده (26) قانون برگزاری مناقصات");
-////                        break;
-////                    case "آیین نامه مناقصه امور ساختمان وزارت راه و راه آهن":
-////                        intentPDF.putExtra("KeyPDF", "آیین نامه مناقصه امور ساختمان وزارت راه و راه آهن");
-////                        break;
-////                    case "قانون احکام دائمی توسعه کشور":
-////                        intentPDF.putExtra("KeyPDF", "قانون احکام دائمی توسعه کشور");
-////                        break;
-////                    case "قانون برنامه ششم توسعه":
-////                        intentPDF.putExtra("KeyPDF", "قانون برنامه ششم توسعه");
-////                        break;
-////                    case "قانون رسیدگی به تخلفات رانندگی و آیین\u200Cنامه اجرایی تبصره 1 ماده 15":
-////                        intentPDF.putExtra("KeyPDF", "قانون رسیدگی به تخلفات رانندگی و آیین\u200Cنامه اجرایی تبصره 1 ماده 15");
-////                        break;
-////                    case "قانون رفع موانع توليد رقابت\u200Cپذير و ارتقاي نظام مالي کشور":
-////                        intentPDF.putExtra("KeyPDF", "قانون رفع موانع توليد رقابت\u200Cپذير و ارتقاي نظام مالي کشور");
-////                        break;
-////                    case "قانون مالیات بر ارزش افزوده و آیین نامه های اجرایی":
-////                        intentPDF.putExtra("KeyPDF", "قانون مالیات بر ارزش افزوده و آیین نامه های اجرایی");
-////                        break;
-////                    case "قانون مبارزه با پولشویی و آیین نامه اجرایی":
-////                        intentPDF.putExtra("KeyPDF", "قانون مبارزه با پولشویی و آیین نامه اجرایی");
-////                        break;
-////                    case "قانون هوای پاک":
-////                        intentPDF.putExtra("KeyPDF", "قانون هوای پاک");
-////                        break;
-////
-////                }
-////                startActivity(intentPDF);
-//                pdf_selector.dismiss();
-//            }
-//        });
-//
-//        builder_pdfSelector.setView(linearLayout_pdfSelector);
-//        pdf_selector = builder_pdfSelector.create();
-//        pdf_selector.show();
+    }
+
+    private void AlertDialogSubListEstekgDami() {
+//        alertOpenPDF(pdfNamesAnotherRules);
+
+
+        AlertDialog.Builder builder_pdfSelector = new AlertDialog.Builder(Activity_Posts.this);
+        LinearLayout linearLayout_pdfSelector = (LinearLayout) getLayoutInflater().inflate(R.layout.pdf_selector, null, false);
+        ListView listPDFSelector = linearLayout_pdfSelector.findViewById(R.id.listPDFSelector);
+        ArrayAdapter arrayAdapterPDF = new ArrayAdapter(Activity_Posts.this, android.R.layout.simple_list_item_1, subListEstekgDami);
+        listPDFSelector.setAdapter(arrayAdapterPDF);
+        listPDFSelector.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                switch (subListEstekgDami[i]) {
+                    case "استخدامی":
+                        alertOpenPDF(pdfNamesEstekgDami);
+                        break;
+                }
+                alertEstekgDami.dismiss();
+            }
+        });
+
+        builder_pdfSelector.setView(linearLayout_pdfSelector);
+        alertEstekgDami = builder_pdfSelector.create();
+        alertEstekgDami.show();
+
 
     }
 
@@ -592,7 +532,10 @@ public class Activity_Posts extends AppCompatActivity {
             startActivity(intentPDF);
             adOpenPDF.dismiss();
         } else {
-            new Activity_Posts.DownloadFile().execute("http://www.azmoonshahri.ir/meysam/" + s + ".pdf", s + ".pdf");
+            if (internet.CheckNetworkConnection())
+                new Activity_Posts.DownloadFile().execute("http://www.azmoonshahri.ir/meysam/" + s + ".pdf", s + ".pdf");
+            else
+                checkNet();
             adOpenPDF.dismiss();
         }
 
@@ -720,6 +663,22 @@ public class Activity_Posts extends AppCompatActivity {
 
             //   super.onBackPressed();
         }
+    }
+
+    private void checkNet() {
+        PrettyDialog prettyDialog = new PrettyDialog(this);
+        prettyDialog.setIcon(
+                R.drawable.pdlg_icon_info,     // icon resource
+                R.color.pdlg_color_red,      // icon tint
+                new PrettyDialogCallback() {   // icon OnClick listener
+                    @Override
+                    public void onClick() {
+
+                    }
+                });
+        prettyDialog.setTitle(getString(R.string.AlertCantConnect));
+        prettyDialog.setMessage(getString(R.string.AlertCheckNetAgain));
+        prettyDialog.show();
     }
 
 }

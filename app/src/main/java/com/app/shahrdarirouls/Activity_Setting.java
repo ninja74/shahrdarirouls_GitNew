@@ -30,7 +30,7 @@ public class Activity_Setting extends AppCompatActivity {
     Spinner spinnerFont;
     TextView txttestSize, txttestFont;
     int numberProgressAfter = 10, spinnerSelection = 0, spinnerSelectionAfter = 0;
-    boolean chengeSetting = false;
+    boolean changeSetting = false;
 
     SharedPreferences shared;
 
@@ -67,6 +67,7 @@ public class Activity_Setting extends AppCompatActivity {
                 font = fontsName[i];
                 Typeface custom_font = Typeface.createFromAsset(getAssets(), fonts[i]);
                 txttestFont.setTypeface(custom_font);
+                changeSetting = true;
             }
 
             @Override
@@ -89,14 +90,14 @@ public class Activity_Setting extends AppCompatActivity {
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-                chengeSetting = true;
+                changeSetting = true;
             }
         });
 
         btnsabt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (chengeSetting == false) {
+                if (changeSetting == false) {
                     Toast.makeText(Activity_Setting.this, "تغییراتی داده نشده", Toast.LENGTH_SHORT).show();
                 } else {
                     AlertDialog.Builder builder;

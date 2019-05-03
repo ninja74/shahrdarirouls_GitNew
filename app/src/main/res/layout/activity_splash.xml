@@ -1,35 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity_Splash"
     android:gravity="center"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".Activity_Splash">
 
     <ImageView
-        android:id="@+id/imgSplash"
-        android:src="@drawable/logo"
         android:layout_width="250dp"
-        android:layout_height="250dp" />
+        android:layout_height="250dp"
+        android:src="@drawable/logo" />
 
     <TextView
-        android:id="@+id/txtSplashName"
-        android:text="@string/app_name"
-        android:textStyle="bold"
-        android:textColor="#85929e"
-        android:textSize="25sp"
-        android:layout_marginTop="20dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
-    <TextView
-        android:id="@+id/txtSplashVersion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:textColor="#FF4B44"
-        android:text="ورژن اردیبهشت 98"/>
+        android:text="@string/stTop"
+        android:textColor="#85929e"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/stDown"
+        android:textColor="#85929e"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="ورژن اردیبهشت 98"
+        android:textColor="#FF4B44" />
+    <TextView
+        android:id="@+id/txtTryAgain"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="تلاش دوباره" />
+
 
 </LinearLayout>
